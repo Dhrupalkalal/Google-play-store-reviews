@@ -1,4 +1,3 @@
-# import library
 import pandas as pd
 import os
 import re
@@ -17,7 +16,7 @@ from wordcloud import WordCloud, STOPWORDS
 
 
 
-# dataset
+
 reviews = pd.read_csv('googleplaystore_user_reviews.csv')
 reviews=reviews.dropna()
 
@@ -100,9 +99,9 @@ print(f'accuracy: {acc}, precision: {prec}')
 import numpy as np
 
 twt = ['Unfortunately I already had this exact picture tattooed on my chest, but this shirt is very useful in colder weather.']
-#vectorizing the tweet by the pre-fitted tokenizer instance
+
 twt = tokenizer.texts_to_sequences(twt)
-#padding the tweet to have exactly the same shape as `embedding_2` input
+
 twt = keras.preprocessing.sequence.pad_sequences(twt, maxlen=28, dtype='int32', value=0)
 print(twt)
 sentiment = model.predict(twt,batch_size=1,verbose = 2)[0]
